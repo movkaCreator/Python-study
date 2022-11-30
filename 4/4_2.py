@@ -1,6 +1,6 @@
 def isPrime(num):
     flag = True
-    for i in range(2, num // 2):
+    for i in range(2, num // 2 + 1):
         if num % i == 0:
             flag = False
             break
@@ -8,7 +8,7 @@ def isPrime(num):
 
 num = int(input())
 
-for i in range(1, num + 1):
+for i in range(2, num + 1):
     if isPrime(i) and isPrime(num - i):
         print(i, num - i)
         break
