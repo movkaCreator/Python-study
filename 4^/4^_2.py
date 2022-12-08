@@ -1,6 +1,7 @@
-def certainChars(k):
+def certainChars():
     file_input = open("input.txt", "r")
     file_output = open("output.txt", "w")
+    k = int(file_input.readline())
     result = ""
     flag = True
     while flag:
@@ -10,12 +11,11 @@ def certainChars(k):
             file_input.close()
             file_output.close()
             return
-        elif len(file_line) < k:
+        if len(file_line) < k:
             continue
-        elif file_line[k] == ' ' or file_line[k] =='\n':
+        if file_line[k - 1] == '\n':
             continue
         else:
-            result += file_line[k]
+            result += file_line[k - 1]
 
-k = int(input())  
-print(certainChars(k - 1))
+print(certainChars())
