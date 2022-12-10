@@ -15,5 +15,4 @@ def firstChars():
         else:
             result += file_line[0]
 
-
 print(firstChars())
