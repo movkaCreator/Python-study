@@ -17,4 +17,4 @@ def maxLengthRow():
             result = file_line
             max = len(file_line)
             
-print(maxLengthRow())
+maxLengthRow()

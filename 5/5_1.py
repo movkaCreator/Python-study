@@ -1,21 +1,20 @@
-def numberOfMaxRow():
+import numpy as np
+
+def maxNumInRow():
     file_input = open("input.txt", "r")
     file_output = open("output.txt", "w")
-    max = 1
     flag = True
-    countRow = 0
-    maxcount = 0
+    size = int(file_input.readline())
+    result = ""
     while flag:
         file_line = file_input.readline()
         if not file_line:
-            file_output.write(str(maxcount))
+            file_output.write(result)
             file_input.close()
             file_output.close()
             return
         else:
-            countRow += 1
-            if len(file_line) > max:
-                max = len(file_line)
-                maxcount = countRow
+            file_line = list(map(int, file_line.split()))
+            result += str(np.max(file_line)) + ' '
             
-numberOfMaxRow()
+maxNumInRow()

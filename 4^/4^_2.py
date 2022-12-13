@@ -18,4 +18,4 @@ def certainChars():
         else:
             result += file_line[k - 1]
 
-print(certainChars())
+certainChars()
